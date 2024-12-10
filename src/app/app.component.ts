@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,8 @@ import { Component, input } from '@angular/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  public readonly title = input.required<string>();
-  public readonly color = input.required<string>();
+  public readonly title = input<string>('default title');
+  public readonly color = input<string>('lightcoral');
+
+  public readonly clicked = output<string>();
 }
